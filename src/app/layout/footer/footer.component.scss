@@ -1,0 +1,48 @@
+.wrap {
+
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .information {
+      margin: 64px auto;
+
+      .introduce,
+      .links {
+        color: #FFF;
+
+        .logo {
+          margin-bottom: 25px;
+        }
+
+        .phone {
+          margin-bottom: 8px;
+
+          &-label {
+            color: rgba(#FFF, .6);
+          }
+        }
+
+        .title {
+          opacity: .87;
+          font-size: 16px;
+          line-height: 1.38;
+        }
+
+        .content {
+          margin-top: 19px;
+          opacity: 0.6;
+          font-size: 14px;
+          line-height: 1.57;
+          text-align: left;
+
+          a {
+            text-decoration: none;
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+}
