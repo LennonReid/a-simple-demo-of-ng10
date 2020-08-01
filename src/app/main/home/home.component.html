@@ -1,0 +1,37 @@
+<div fxLayout="column" fxLayoutAlign="start none" fxLayoutGap="30px" class="wrap">
+
+
+<div class="line" fxLayout="row" fxLayoutAlign="center center">Basic grid-list</div>
+    <div fxLayout="column" fxLayoutAlign="start none">
+        <div fxLayout="row" fxLayoutAlign="start none">
+
+            <mat-grid-list cols="2" rowHeight="2:1" class="wrap-grid">
+                <mat-grid-tile class="wrap-grid-tile">1</mat-grid-tile>
+                <mat-grid-tile class="wrap-grid-tile">2</mat-grid-tile>
+                <mat-grid-tile class="wrap-grid-tile">3</mat-grid-tile>
+                <mat-grid-tile class="wrap-grid-tile">4</mat-grid-tile>
+            </mat-grid-list>
+        </div>
+
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="line" fxLayout="row" fxLayoutAlign="center center">Dynamic grid-list</div>
+    <div fxLayout="column" fxLayoutAlign="start none">
+        <div fxLayout="row" fxLayoutAlign="start none">
+            <mat-grid-list cols="4" rowHeight="100px" class="wrap-grid">
+                <mat-grid-tile
+                    *ngFor="let tile of tiles"
+                    [colspan]="tile.cols"
+                    class="wrap-grid-tile"
+                    [rowspan]="tile.rows"
+                    [style.background]="tile.color">
+                    {{tile.text}}
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+
+    </div>
+    <mat-divider></mat-divider>
+
+</div>

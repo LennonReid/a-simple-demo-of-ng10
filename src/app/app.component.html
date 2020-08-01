@@ -1,8 +1,17 @@
-<app-header [isDeep]="(documentScrollTop | async)"></app-header>
+<app-header  (menuToggle)="menuToggle($event)"></app-header>
 
 <div #container class="content-container" >
 
-  <router-outlet></router-outlet>
+<!--    <mat-sidenav-container class="example-container">-->
+<!--        <mat-sidenav mode="side" [opened]="shouldRun">Sidenav content</mat-sidenav>-->
+<!--        <mat-sidenav-content>-->
+<!--            <router-outlet></router-outlet></mat-sidenav-content>-->
+<!--    </mat-sidenav-container>-->
+    <app-sidenav [shouldRun]="shouldRun" [outlet]="outlet">
+        <ng-template #outlet>
+            <router-outlet></router-outlet>
+        </ng-template>
+    </app-sidenav>
 
   <app-footer class="footer"></app-footer>
 </div>

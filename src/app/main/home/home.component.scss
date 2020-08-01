@@ -1,0 +1,14 @@
+.wrap{
+    .line{
+        font-size: 24px;
+        font-weight: bolder;
+        margin-top: 30px;
+    }
+    &-grid {
+        width: 100%;
+        height: 100%;
+        &-tile {
+            background: lightblue;
+        }
+    }
+}

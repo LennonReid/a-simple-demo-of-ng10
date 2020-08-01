@@ -1,0 +1,36 @@
+
+<mat-sidenav-container class="sidenav-container" (backdropClick)="close()" >
+    <mat-sidenav #sidenav
+                 mode="side"
+                 (keydown.escape)="close()"
+                 class="mt-64 sidenav"
+                 [opened]="shouldRun">
+        <div
+            fxLayout="column"
+            fxLayoutAlign="start none"
+            fxLayoutGap="24px">
+
+        <button mat-button fxLayout="row" fxLayoutAlign="center center" class="nav-item">
+
+            Autocomplete
+        </button>
+        <button mat-button fxLayout="row" fxLayoutAlign="center center" class="nav-item">
+            Badge
+        </button>
+        <button mat-button fxLayout="row" fxLayoutAlign="center center" class="nav-item">
+            BottomSheet
+        </button>
+        <button mat-button fxLayout="row" fxLayoutAlign="center center" class="nav-item">
+            a
+        </button>
+        <button mat-button fxLayout="row" fxLayoutAlign="center center" class="nav-item">
+            a toggle
+        </button>
+
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="mt-64 sidenav-content">
+        <ng-container *ngTemplateOutlet="outlet"></ng-container>
+        <!--        <ng-template #outlet></ng-template>-->
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+    // 点击按钮事件
+    @Output() readonly menuToggle: EventEmitter<boolean>;
 
-  ngOnInit(): void {
-  }
+    shouldRun = true;
 
+    constructor() {
+        this.menuToggle = new EventEmitter<boolean>();
+    }
+    menuClick(): void {
+        this.shouldRun = !this.shouldRun;
+        this.menuToggle.emit(this.shouldRun);
+    }
 }
